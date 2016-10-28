@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+
+<style>
+
+* {
+        box-sizing: inherit;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.header-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: auto;
+}
+
+.mnavbar {
+	background-color: #ddd;
+	border-bottom: 1px solid #222;
+}
+
+.mnavbar-list {
+	max-width: 1000px;
+        margin: 0 auto;
+	list-style-type: none;
+	padding: 0;
+	display: block;
+	overflow: hidden;
+}
+
+.mnavbar-li {
+	float: left;
+}
+
+.mnavbar-li a {
+	display: block;
+	padding: 8px;
+	text-decoration: none;
+	color: #222;
+}
+
+.mnavbar-li a:hover {
+	background-color: #444;
+	color: #eee;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.header {
+	background-color: #eee;
+}
+
+.header-wrap {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	max-width: 800px;
+}
+
+.header-wrap h3 {
+	font-size: 30px;
+}
+
+.articles-cont {
+        padding: 15px 0;
+}
+
+.articles-cont .col-xs-10 {
+        margin-bottom: 15px;
+}
+
+.article-box {
+        border-radius: 6px;
+        background-color: #efffff;
+        border: 1px solid #aaa;
+        padding: 20px 10px;
+}
+
+.article-box-header {
+        text-align: center;
+}
+
+.article-box-header a {
+        font-weight: 200;
+        font-size: 30px;
+}
+
+.article-box-body {
+        padding: 20px;
+}
+
+.article-box-snippet {
+        margin-top: 15px;
+}
+
+.article-box-snippet p, .article-box-snippet a {
+        display: inline;
+}
+
+.article-box-img img {
+        max-width: 100%;
+        height: auto;
+        width: auto\9;
+}
+
+.article-box-snippet p {
+        word-wrap: break-word;
+        margin: 0;
+}
+
+</style>
+
+</head>
+
+<body>
+	<div class="main">
+		<div class="header-top">
+			<div class="header">
+				<div class="header-wrap text-center">
+					<h3>Zika virus and women's health</h3>
+					<p>A blog about our thoughts</p>
+				</div>
+			</div>
+		</div>
+		<div class="main-body">
+			<div class="container-fluid articles-cont">
+                                <div class="row">
+                                        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4">
+                                                <div class="article-box floater">
+                                                        <div class="article-box-main">
+                                                                <div class="article-box-header">
+                                                                        <a class="black-link" href="/zikainfo.html">General Zika Info</a>
+                                                                </div>
+                                                                <div class="article-box-body">
+                                                                        <div class="article-box-img">
+                                                                                <img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/02/f0127511-zika_virus_in_blood_illustration-spl-12$
+                                                                        </div>
+                                                                        <div class="article-box-snippet">
+                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq$
+                                                                                <a href="/zikainfo.html">Read More</a>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4">
+                                                <div class="article-box floater">
+                                                        <div class="article-box-main">
+                                                                <div class="article-box-header">
+                                                                        <a class="black-link" href="/zikainfo.html">Women's Rights and Zika</a>
+                                                                </div>
+                                                                <div class="article-box-body">
+                                                                        <div class="article-box-img">
+                                                                                <img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/02/f0127511-zika_virus_in_blood_illustration-spl-12$
+                                                                        </div>
+                                                                        <div class="article-box-snippet">
+                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq$
+                                                                                <a href="/zikainfo.html">Read More</a>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+		</div>
+	</div>
+</body>
+
+</html>

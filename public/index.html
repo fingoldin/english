@@ -25,12 +25,15 @@ window.onload = function() {
 <style>
 
 body {
-        background-image: url("https://woodwardadvisors.files.wordpress.com/2014/12/bookshelf.jpg");
-	background-size: contain;
+}
+
+.header {
+	margin: 5px;
 }
 
 .header h1 {
 	color: #111111;
+	margin: 5px;
 }
 
 .header p {
@@ -68,8 +71,20 @@ body {
 }
 
 .header-wrap {
-	border-top: 20px solid #1d3;
-	background-color: #eee;
+	padding: 15px;
+	padding-top: 5px;
+	margin: 0 15px;
+	border-bottom: 1px solid #444;
+	position: relative;
+}
+
+.header-btn {
+	display: block;
+}
+
+.header-btn button {
+	display: inline-block;
+	border: none;
 }
 
 </style>
@@ -80,18 +95,11 @@ body {
 
 <div class="body-wrapper">
 
-<div class="mnavbar">
-	<div class="mnavbar-wrap">
-		<ul class="mnavbar-list">
-			<li class="mnavbar-li pull-left"><a class="black-link" href="/english.html">Home</a></li>
-			<li class="mnavbar-li pull-right"><a class="black-link">About</a></li>
-		</ul>
-	</div>
-</div>
 <div class="main main-home">
 	<div class="main-body">
 		<div class="header-wrap text-center">
-			<div class="element-load header floater text-center">
+			<div class="header-btn text-left"><button class="custom-btn">About</button></div>
+			<div class="header">
 				<h1>Zika Virus and Women's Health Blog</h1>
 				<p>A blog on about our thoughts on the Zika epidemic and its connections to our English class</p>
 			</div>

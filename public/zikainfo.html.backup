@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/english.js"></script>
+
+<link rel="stylesheet" href="/wheel-loader.css"></link>
+<link rel="stylesheet" href="/english.css"></link>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	var body = document.getElementsByTagName("body")[0];
+
+	body.classList.remove("body-loading");
+};
+
+</script>
+
+</head>
+
+<body class="body-loading">
+
+<div class="body-wrapper">
+
+<div class="mnavbar">
+        <div class="mnavbar-wrap">
+                <ul class="mnavbar-list">
+                        <li class="mnavbar-li pull-left"><a class="black-link" href="/english.html">Home</a></li>
+                        <li class="mnavbar-li pull-right"><a class="black-link">About</a></li>
+                </ul>
+        </div>
+</div>
+<div class="main">
+	<div class="main-body">
+		<div class="element-load header text-center">
+			<h1>The Zika Virus</h1>
+		</div>
+		<div class="element-load main-article">
+			<div class="main-article-text border-bottom">
+				<p>
+					<br><br>
+				</p>
+				<div class="hidden-info hidden-info-disabled border-bottom">
+					<button class="hidden-info-header text-center custom-btn" onclick="toggleInfo(this.parentNode)">
+						Some Stats!
+						<span class="caret"></span>
+					</button>
+					<div class="hidden-info-body" style="height:485px;">
+						<p>
+						</p><br>
+						<img src="http://www.financialsense.com/sites/default/files/imagecache/desktop/users/u3089/images/2016/0217/01-gdp-breakdown.png" width="460px" height="380px"></img>
+					</div>
+				</div>
+				<p>
+					<br><br>
+					<br><br>
+				</p>
+			</div>
+			<div class="comments text-center">
+				<div class="comments-header">
+					<h2>Comments</h2>
+				</div>
+				<div class="comments-options">
+				</div>
+				<div class="comments-new">
+					<div class="comments-new-cont">
+						<div class="form-group">
+							<label for="new-comment-name">Add a comment</label>
+							<input type="text" class="form-control" id="new-comment-name" placeholder="Your Name"></input>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" placeholder="Comment" rows="4"></textarea>
+						</div>
+						<div class="form-group">
+							<button class="custom-btn">Post</button>
+						</div>
+					</div>
+				</div>
+				<div class="comments-main">
+					<ul class="comments-list" id="comments-list">
+						<div class="comment-wrap">
+							<li class="comment-li text-left">
+								<div class="comments-comment">
+									<p class="comments-comment-text">
+										Thanks for the article! It was interesting, and I particularly liked the part on the Zika virus.
+									</p>
+									<div class="comments-comment-reply text-right">
+										<button class="custom-btn">Reply</button>
+									</div>
+								</div>
+								<div class="comment-info">
+									<span class="comments-comment-name">Vassilios</span>
+									<span class="glyphicon glyphicon-triangle-right"></span>
+									<span class="comments-comment-date">September 20th</span>
+								</div>
+							</li>
+							<ul class="comments-list comments-list-replies">
+								<li class="comment-li text-left">
+                                                                	<div class="comments-comment">
+                                                                        	<p class="comments-comment-text">
+                                                                                	Thanks for the article! It was interesting, and I particularly liked the part on the Zika virus.
+                                                                        	</p>
+                                                                	</div>
+                                                                	<div class="comment-info">
+                                                                        	<span class="comments-comment-name">Vassilios</span>
+                                                                        	<span class="glyphicon glyphicon-triangle-right"></span>
+                                                                        	<span class="comments-comment-date">September 20th</span>
+                                                                	</div>
+                                                        	</li>
+							</ul>
+						</div>
+						<div class="comment-wrap">
+							<li class="comment-li text-left">
+        	                                                <div class="comments-comment">
+                	                                                <p class="comments-comment-text">
+                        	                                                Thanks for the article! I was interesting, and I particularly liked the part on the Zika virus.
+                                	                                </p>
+                                        	                        <div class="comments-comment-reply text-right">
+                                                	                        <button class="custom-btn">Reply</button>
+                                                        	        </div>
+                                                        	</div>
+                                                        	<div class="comment-info">
+                                                                	<span class="comments-comment-name">Vassilios</span>
+                                                                	<span class="glyphicon glyphicon-triangle-right"></span>
+                                                                	<span class="comments-comment-date">September 20th</span>
+                                                        	</div>
+                                                	</li>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>
