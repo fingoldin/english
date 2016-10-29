@@ -2,151 +2,350 @@
 
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="/english.js"></script>
-
-<link rel="stylesheet" href="/wheel-loader.css"></link>
-<link rel="stylesheet" href="/english.css"></link>
-
-<script type="text/javascript">
-
-window.onload = function() {
-	var body = document.getElementsByTagName("body")[0];
-
-	body.classList.remove("body-loading");
-};
-
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
 
 <style>
 
-body {
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+html, body, .main {
+	margin: 0;
 }
 
 .header {
-	margin: 5px;
-}
-
-.header h1 {
-	color: #111111;
-	margin: 5px;
-}
-
-.header p {
-	color: #252525;
-}
-
-.header, .articles-header {
-	display: inline-block;
-}
-
-.articles-header h2 {
-	margin: 0;
-	padding: 8px 40px;
-}
-
-.main, .main-body {
-	margin: 0;
-	padding: 0;
-}
-
-.main {
-	max-width: none;
-}
-
-.main-article {
-	max-width: 1300px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.floater {
-	background-color: rgba(255, 255, 255, 0.9);
-	border-radius: 10px;
-	padding: 8px 20px;
-}
-
-.header-wrap {
-	padding: 15px;
-	padding-top: 5px;
-	margin: 0 15px;
-	border-bottom: 1px solid #444;
+	height: 100vh;
+	width: 100%;
+	background-color: white;
+	background-size: auto 100%;
+	background-image: url("/rio384x240.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
 	position: relative;
 }
 
-.header-btn {
+#imgHQ {
+	display: none;
+}
+
+.body {
+	width: 100%;
+	height: 500px;
+	opacity: 1;
+}
+
+.body-loading {
+        opacity: 0;
+}
+
+.header-text, .header-scroll {
+	background-color: rgba(50, 50, 50, 0.6);
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	color: white;
+	white-space: normal;
+}
+
+.header-text {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+	width: auto;
+	height: auto;
+	text-align: center;
+	padding: 20px;
+}
+
+.header-scroll {
+	position: absolute;
+	left: 50%;
+	bottom: 60px;
+	transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
+        -moz-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+	font-size: 20px;
+	padding: 5px 10px;
+	display: none;
+}
+
+.header h3, .header p {
+	margin: 0;
+	padding: 0;
 	display: block;
 }
 
-.header-btn button {
+.header h3 {
+	font-family: 'Lobster', Georgia, Times, serif;
+	font-size: 60px;
+	font-weight: 50;
+	line-height: 140%;
+	color: white;
+}
+
+.header p {
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	color: white;
+	font-weight: 540;
+}
+
+.body {
+	text-align: center;
+	padding: 30px 5px;
+}
+
+.article-boxes {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: auto;
 	display: inline-block;
-	border: none;
+	transition: opacity 1s ease-out, transform 1s;
+	-webkit-transition: opacity 1s ease-out, transform 1s;
+	-ms-transition: opacity 1s ease-out, transform 1s;
+	-moz-transition: opacity 1s ease-out, transform 1s;
+}
+
+.article-box {
+	display: inline-block;
+	width: 500px;
+	height: 500px;
+	-webkit-box-shadow: 5px 5px 26px -5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 26px -5px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 26px -5px rgba(0,0,0,0.75);
+	margin: 15px;
+	vertical-align: top;
+	background-color: white;
+	border: 10px solid white;
+}
+
+.article-box:hover {
+	-webkit-box-shadow: 2px 2px 26px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 26px -5px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 26px -5px rgba(0,0,0,0.75);
+}
+
+.article-box-body {
+	display: block;
+	word-wrap: break-word;
+	padding: 15px 5px 5px 5px;
+}
+
+.article-title, .article-box-body p {
+	margin: 3px;
+	color: black;
+}
+
+.article-title {
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-size: 25px;
+	font-weight: 600;
+	padding: 7px;
+	display: block;
+}
+
+.article-title, .article-more {
+	text-decoration: none;
+}
+
+.article-title:hover, .article-more:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.article-box-body p, .article-more {
+	display: inline;
+}
+
+.article-text {
+	font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+	text-align: left;
+	font-size: 17px;
+	padding: 7px;
+}
+
+.article-image {
+	overflow: hidden;
+	max-height: 300px;
+	position: relative;
+}
+
+.article-image:after {
+	position: absolute;
+	content: "";
+	left: 0px;
+	bottom: 0px;
+	height: 30%;
+	width: 100%;
+	background: linear-gradient(transparent, white);
+}
+
+.article-image img {
+	width: 100%;
+	height: auto;
+}
+
+.element-load {
+	opacity: 0;
+	transform: translate(0, -15px);
+	-webkit-transform: translate(0, -15px);
+	-moz-transform: translate(0, -15px);
+	-ms-transform: translate(0, -15px);
 }
 
 </style>
 
+<script type="text/javascript">
+
+function resize()
+{
+	if($(window).width() / $(window).height() > 1.6)
+                $(".header").css("background-size", "100% auto");
+        else
+                $(".header").css("background-size", "auto 100%");
+}
+
+$(document).ready(function()
+{
+	$("body").scrollTop(0);
+	resize();
+	$("body").removeClass("body-loading");
+});
+
+$(window).on("resize", function() { resize(); });
+
+function scrollCallback()
+{
+	if($("body").scrollTop() > 200)
+		$(".article-boxes").removeClass("element-load");
+}
+
+function imgSwitch()
+{
+	$(".header").css(
+		"background-image", "url('/rio.jpg')"
+	);
+}
+
+</script>
+
 </head>
 
-<body class="body-loading" onscroll="onscrollCallback();">
+<body onscroll="scrollCallback()" class="body-loading">
 
-<div class="body-wrapper">
-
-<div class="main main-home">
-	<div class="main-body">
-		<div class="header-wrap text-center">
-			<div class="header-btn text-left"><button class="custom-btn">About</button></div>
-			<div class="header">
-				<h1>Zika Virus and Women's Health Blog</h1>
-				<p>A blog on about our thoughts on the Zika epidemic and its connections to our English class</p>
-			</div>
+<div class="main">
+	<img id="imgHQ" src="/rio.jpg" onload="imgSwitch()"></img>
+	<div class="header">
+		<div class="header-text">
+			<h3>Zika Virus and Women's Health Blog</h3>
+			<p>Eliana Roberts and Vassilios Kaxiras</p>
 		</div>
-		<div class="element-load main-article">
-			<div class="text-center"><div class="articles-header floater"><h2>Articles</h2></div></div>
-			<div class="container-fluid articles-cont">
-				<div class="row">
-					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4">
-						<div class="article-box floater">
-							<div class="article-box-main">
-								<div class="article-box-header">
-									<a class="black-link" href="/zikainfo.html">General Zika Info</a>
-								</div>
-								<div class="article-box-body">
-									<div class="article-box-img">
-										<img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/02/f0127511-zika_virus_in_blood_illustration-spl-1200x800.jpg"></img>
-									</div>
-									<div class="article-box-snippet">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum...</p>
-										<a href="/zikainfo.html">Read More</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4">
-                                                <div class="article-box floater">
-                                                        <div class="article-box-main">
-                                                                <div class="article-box-header">
-                                                                        <a class="black-link" href="/zikainfo.html">Women's Rights and Zika</a>
-                                                                </div>
-                                                                <div class="article-box-body">
-                                                                        <div class="article-box-img">
-                                                                                <img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/02/f0127511-zika_virus_in_blood_illustration-spl-1200x800.jpg"></img>
-                                                                        </div>
-                                                                        <div class="article-box-snippet">
-                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq$
-                                                                                <a href="/zikainfo.html">Read More</a>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
+		<div class="header-scroll">
+			Scroll to see articles
+		</div>
+	</div>
+	<div class="body">
+		<ul class="article-boxes">
+			<li class="article-box">
+                                <div class="article-box-body">
+                                        <a class="article-title" href="/zikawomen.html">An Overview of The Zika Outbreak in Brazil</a>
+                                        <div class="article-image">
+                                                <img src="https://static01.nyt.com/images/2016/02/08/opinion/08Diniz/08Diniz-master768.jpg"></img>
                                         </div>
+                                        <div class="article-text">
+                                                <p>In February of 2016 the World Health Organization declared the outbreak of the Zika virus in Central and South America a Public Health Emergency of International...</p>
+                                                <a class="article-more" href="/zikawomen.html">Read More</a>
+                                        </div>
+                                </div>
+                        </li>
+			<li class="article-box">
+				<div class="article-box-body">
+					<a class="article-title" href="/zikainfo.html">Zika Virus Info</a>
+					<div class="article-image">
+						<img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2016/02/f0127511-zika_virus_in_blood_illustration-spl-1200x800.jpg"></img>
+					</div>
+					<div class="article-text">
+						<p>About - The Zika virus is a pathogen transmitted by the Aedes aegypti mosquito. Belonging to the Flavivirus genus, Flaviviridae family... </p>
+						<a class="article-more" href="/zikainfo.html">Read More</a>
+					</div>
 				</div>
-			</div>
-		</div>
+			</li>
+			<li class="article-box">
+				<div class="article-box-body">
+                                        <a class="article-title" href="/sunsconnection.html">Women's Healthcare and <i>A Thousand Splendid Suns</i></a>
+                                        <div class="article-image">
+                                                <img src="https://upload.wikimedia.org/wikipedia/en/1/10/A_Thousand_Splendid_Suns.gif"></img>
+                                        </div>
+                                        <div class="article-text">
+                                                <p>In A Thousand Splendid Suns by Khaled Hosseini the two female protagonists Laila and Mariam struggle with the accessibility to proper health care...</p>
+                                                <a class="article-more" href="/sunsconnection.html">Read More</a>
+                                        </div>
+                                </div>
+			</li>
+			<li class="article-box">
+                                <div class="article-box-body">
+                                        <a class="article-title" href="/stigma.html">The Stigma Around Microcephaly</a>
+                                        <div class="article-image">
+                                                <img src="http://www.seattleglobalist.com/wp-content/uploads/2016/06/Brazil-Zika-Mothers-1-700x464.jpg"></img>
+                                        </div>
+                                        <div class="article-text">
+                                                <p>Microcephaly, an affliction where a baby is born with a smaller than average brain, has recently exploded in number of cases...</p>
+                                                <a class="article-more" href="/stigma.html">Read More</a>
+                                        </div>
+                                </div>
+                        </li>
+			<li class="article-box">
+                                <div class="article-box-body">
+                                        <a class="article-title" href="/malalaconnection.html">Women's Healthcare and <i>I Am Malala</i></a>
+                                        <div class="article-image">
+                                                <img src="http://sites.psu.edu/findyourroar/wp-content/uploads/sites/27765/2015/07/malala.jpeg"></img>
+                                        </div>
+                                        <div class="article-text">
+                                                <p>Often, in less developed countries, or those with ineffective governments, basic public services such as clean water supply and waste collection become a rarity, especially in rural areas...</p>
+                                                <a class="article-more" href="/malalaconnection.html">Read More</a>
+                                        </div>
+                                </div>
+                        </li>
+			<li class="article-box">
+                                <div class="article-box-body">
+                                        <a class="article-title" href="/zikastories.html">Stories of Zika</a>
+                                        <div class="article-image">
+                                                <img src="/zikamovie.png"></img>
+                                        </div>
+                                        <div class="article-text">
+                                                <p>The video Zika, the film directed by Debora Diniz explores the life of several women in Brazil who have been affected by the Zika virus. One story highlighted in the film...</p>
+                                                <a class="article-more" href="/zikastories.html">Read More</a>
+                                        </div>
+                                </div>
+                        </li>
+			<li class="article-box">
+                                <div class="article-box-body">
+                                        <a class="article-title" href="/abortion.html">Abortion in the Time of Zika</a>
+                                        <div class="article-image">
+                                                <img src="/abortionmovie.png"></img>
+                                        </div>
+                                        <div class="article-text">
+                                                <p>This video from the New York Times describes the challenges faced by many women in Brazil because of the strict abortion laws that prevent them from terminating a pregnancy that could cause them a lot of suffering. The video follows the story of Damiana...</p>
+                                                <a class="article-more" href="/abortion.html">Read More</a>
+                                        </div>
+                                </div>
+                        </li>
+                        <li class="article-box"></li>
+		</ul>
 	</div>
 </div>
 
